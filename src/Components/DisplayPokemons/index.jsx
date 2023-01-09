@@ -28,7 +28,7 @@ export const DisplayPokemons = ({ name }) => {
 
   return (
     <Link to={`/${typeId}/${name}`}>
-      <Stack color="black" direction="row" flexWrap="wrap" justifyContent="center" alignItems="center" sx={{ width: '450px', backgroundColor: 'gray', margin: '5px', borderRadius: '10px', padding: '20px' }}>
+      <Stack color="black" direction="row" flexWrap="wrap" justifyContent="center" alignItems="center" sx={{ width:{md:'450px', xs:'200px'}, height:{md:'200px', xs:'300px'}, backgroundColor: 'gray', margin: '5px', borderRadius: '10px', padding: '20px' }}>
         <img src={state.artwork} alt="artwork" width="200px" height="200px" />
         <Stack>
           <Typography variant="h5" sx={{ fontVariant: 'small-caps' }}>
