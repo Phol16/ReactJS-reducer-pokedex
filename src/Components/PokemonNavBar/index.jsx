@@ -18,7 +18,7 @@ export const PokemonNavBar = () => {
   const displayTypes = (e) => {
     return (
       <Link to={`/${e.name}`} key={e.name}>
-        <Button sx={{ color: 'white', width: '110px', margin: '2px', backgroundColor: 'transparent',border:'black 1px solid', textShadow:'1px 1px 4px #000000' }}>{e.name}</Button>
+        <Button sx={{ color: 'white', width: '110px', margin: '2px', backgroundColor: 'darkgray', textShadow:'1px 1px 4px #000000' }}>{e.name}</Button>
       </Link>
     );
   };
