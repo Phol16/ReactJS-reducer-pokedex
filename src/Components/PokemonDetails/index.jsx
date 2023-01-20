@@ -70,7 +70,7 @@ const PokemonDetails = () => {
         </Typography>
       </Link>
       <img src={state.artwork} alt="artWork" width="350px" />
-      <IconButton disabled={state.disable} onClick={captured} size="large" edge="start" aria-label="menu" sx={{ borderRadius: '5px', color: 'white', backgroundColor: 'darkgray', border:'1px solid black', textShadow:'1px 1px 4px #000000' }}>
+      <IconButton disabled={state.disable} onClick={captured} size="large" edge="start" aria-label="menu" sx={{ borderRadius: '5px', color: 'white', backgroundColor: 'darkgray', textShadow:'1px 1px 4px #000000' }}>
         <CatchingPokemonIcon fontSize="inherit" />
         <Typography>Capture</Typography>
       </IconButton>

@@ -9,7 +9,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
+  minWidth: '200px',
   bgcolor: 'gray',
   border: '2px solid #000',
   borderRadius: '20px',
@@ -34,8 +34,29 @@ export const MyPokemonDetails = ({ name }) => {
   };
 
   const displayTypes = (e) => {
+    const color = (
+      e.type.name === 'fire'? 'orange':
+      e.type.name === 'water'? 'blue':
+      e.type.name === 'grass'? 'green':
+      e.type.name === 'poison'? 'purple':
+      e.type.name === 'flying'? 'darkviolet':
+      e.type.name === 'fighting'? 'red':
+      e.type.name === 'bug'? 'lightgreen':
+      e.type.name === 'electric'? 'yellow':
+      e.type.name === 'rock'? 'darkorange':
+      e.type.name === 'ground'? 'brown':
+      e.type.name === 'dark'? 'black':
+      e.type.name === 'fairy'? 'pink':
+      e.type.name === 'normal'? 'darkgray':
+      e.type.name === 'ice'? 'lightblue':
+      e.type.name === 'dragon'? 'violet':
+      e.type.name === 'psychic'? 'darkblue':
+      e.type.name === 'ghost'? '#B689FA':
+      e.type.name === 'steel'? '#D8DDCB':
+      null
+    )
     return (
-      <Typography key={e.type.name} sx={{ width: '80px', margin: '2px 5px', backgroundColor: 'darkgray', color: 'black', padding: '2px 10px', borderRadius: '20px', fontVariant: 'small-caps' }}>
+      <Typography key={e.type.name} sx={{ width: '80px', margin: '2px 5px', backgroundColor: `${color}`, color: 'white',textShadow:'1px 1px 4px #000000', padding: '2px 10px', borderRadius: '5px', fontVariant: 'small-caps' }}>
         {e.type.name}
       </Typography>
     );
@@ -48,7 +69,7 @@ export const MyPokemonDetails = ({ name }) => {
   return (
     <Stack alignItems="center" width="300px" sx={{ backgroundColor: 'gray', margin: '5px', borderRadius: '20px', padding: '20px' }}>
       <img src={state.artwork} alt="artWork" width="250px" />
-      <IconButton onClick={handleOpen} size="medium" edge="start" aria-label="menu" sx={{ borderRadius: '15px', color: 'white', backgroundColor: '#0A0908' }}>
+      <IconButton onClick={handleOpen} size="medium" edge="start" aria-label="menu" sx={{ borderRadius: '5px', color: 'white', backgroundColor: 'darkgray' }}>
         <CatchingPokemonIcon fontSize="inherit" />
         <Typography sx={{ textShadow: '2px 2px 4px black' }}>Release</Typography>
       </IconButton>
