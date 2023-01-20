@@ -13,14 +13,14 @@ function NavBar() {
               <Link to="/">
                 <IconButton size="large" edge="start" aria-label="menu" sx={{ borderRadius: '25px', color: ' white' }}>
                   <CatchingPokemonIcon />
-                  <Typography component="div" sx={{ fontVariant: 'small-caps' }}>
+                  <Typography component="div" sx={{ fontVariant: 'small-caps', textShadow:'1px 1px 4px #000000' }}>
                     PokeDex
                   </Typography>
                 </IconButton>
               </Link>
             </Stack>
             <Link to="/MyPokemon">
-              <Button sx={{ color: 'white' }}>MyPokemons</Button>
+              <Button sx={{ color: 'white', textShadow:'1px 1px 4px #000000' }}>MyPokemons</Button>
             </Link>
           </Stack>
         </Toolbar>
