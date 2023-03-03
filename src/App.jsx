@@ -13,9 +13,10 @@ function App() {
     <PokemonProvider>
       <NavBar />
       <Routes>
-        <Route path="/" element={<PokemonNavBar />}>
+        <Route path='/' element={<PokemonNavBar />}>
+          <Route path='/' element={ <div> Select A Pokemon Type!</div>  }/>
           <Route
-            path="/:typeId"
+            path='/:typeId'
             element={
               <Suspense fallback={<div>...Loading</div>}>
                 <PokemonType />
@@ -23,7 +24,7 @@ function App() {
             }
           />
           <Route
-            path="/:typeId/:name"
+            path='/:typeId/:name'
             element={
               <Suspense fallback={<div>...Loading</div>}>
                 <PokemonDetails />
@@ -32,7 +33,7 @@ function App() {
           />
         </Route>
         <Route
-          path="/Mypokemon"
+          path='/Mypokemon'
           element={
             <Suspense fallback={<div>...Loading</div>}>
               <MyPokemon />
