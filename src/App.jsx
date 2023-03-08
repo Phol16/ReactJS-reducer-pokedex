@@ -14,7 +14,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path='/' element={<PokemonNavBar />}>
-          <Route path='/' element={ <div> Select A Pokemon Type!</div>  }/>
+          <Route path='/' element={<div> Select A Pokemon Type!</div>} />
           <Route
             path='/:typeId'
             element={

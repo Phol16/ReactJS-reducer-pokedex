@@ -7,16 +7,16 @@ import { useState } from 'react';
 export const DisplayPokemons = ({ name }) => {
   const { typeId } = useParams();
   const [state, dispatch] = useReducer(DispPokemonReducer, InitialState);
+  const [page, setPage]=useState(5)
 
   useEffect(() => {
     fetchPokemon(`https://pokeapi.co/api/v2/pokemon/${name}`);
   }, []);
   const fetchPokemon = async (url) => {
     const response = await fetch(url).then((res) => res.json());
-    const types = response.types;
-    const art = response.sprites.other['official-artwork'].front_default;
-    dispatch({ type: 'setArtwork', payload: art });
-    dispatch({ type: 'setElementType', payload: types });
+    console.log();
+    dispatch({ type: 'setArtwork', payload: response.sprites.other['official-artwork'].front_default });
+    dispatch({ type: 'setElementType', payload: response.types });
   };
 
 
@@ -47,17 +47,19 @@ export const DisplayPokemons = ({ name }) => {
         {e.type.name}
       </Typography>
     );
+
   };
+
 
   return (
     <Link to={`/${typeId}/${name}`}>
-      <Stack color="black" direction="row" flexWrap="wrap" justifyContent="center" alignItems="center" sx={{ width:{md:'450px', xs:'200px'}, height:{md:' 200px', xs:'300px'}, backgroundColor: 'gray', margin: '5px', borderRadius: '10px', padding: '20px' }}>
+      <Stack color="black" direction="row" flexWrap="wrap" justifyContent="center" alignItems="center" sx={{ width:{md:'450px', xs:'200px'}, height:{md:' 200px', xs:'300px'}, backgroundColor: '#1F487E', margin: '5px', borderRadius: '10px', padding: '20px' }}>
         <img src={state.artwork} alt="artwork" width="200px" height="200px" />
         <Stack>
           <Typography variant="h5" sx={{ fontVariant: 'small-caps', color:'white', textShadow:'1px 1px 4px #000000' }}>
             {name}
           </Typography>
-          {state.elementType.map(element)}
+          {state.elementType ? state.elementType.map(element) : <p>Loading...</p> }
         </Stack>
       </Stack>
     </Link>

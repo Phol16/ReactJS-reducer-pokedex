@@ -49,13 +49,6 @@ const PokemonDetails = () => {
     );
   };
 
-  const displayMoves = (e) => {
-    return (
-      <Typography key={e.move.name} sx={{ width: '150px', margin: '2px 8px', backgroundColor: 'darkgray', color: 'white',textShadow:'1px 1px 4px #000000', padding: '2px 10px', borderRadius: '5px' }}>
-        {e.move.name}
-      </Typography>
-    );
-  };
 
   const captured = (e) => {
     dispatch({ type: 'setDisable', payload: true });
@@ -63,14 +56,14 @@ const PokemonDetails = () => {
   };
 
   return (
-    <Stack alignItems="center" width="50vw" sx={{ backgroundColor:{md:'gray', sm:'none'}, margin: '20px auto', borderRadius: '20px', padding: '50px' }}>
+    <Stack alignItems="center" width="50vw" sx={{ backgroundColor:{md:'#1F487E', sm:'none'}, margin: '20px auto', borderRadius: '20px', padding: '50px' }}>
       <Link to={`/${typeId}`}>
         <Typography width="fit-content" sx={{ color: 'white', marginLeft: '-25vw', padding: '2px 5px', textShadow:' 1px 1px 4px #000000' }}>
           Back
         </Typography>
       </Link>
-      <img src={state.artwork} alt="artWork" width="350px" />
-      <IconButton disabled={state.disable} onClick={captured} size="large" edge="start" aria-label="menu" sx={{ borderRadius: '5px', color: 'white', backgroundColor: 'darkgray', textShadow:'1px 1px 4px #000000' }}>
+      <img loading='lazy' decoding='async' src={state.artwork} alt="artWork" width="350px" />
+      <IconButton disabled={state.disable} onClick={captured} size="large" edge="start" aria-label="menu" sx={{ borderRadius: '5px', color: 'white', backgroundColor: '#1D3461', textShadow:'1px 1px 4px #000000' }}>
         <CatchingPokemonIcon fontSize="inherit" />
         <Typography>Capture</Typography>
       </IconButton>
@@ -78,10 +71,6 @@ const PokemonDetails = () => {
         {name}
       </Typography>
       <Stack direction="row">{state.types.map(displayTypes)}</Stack>
-      <Typography>Moves:</Typography>
-      <Stack direction="row" flexWrap="wrap" justifyContent="center">
-        {state.moves.map(displayMoves)}
-      </Stack>
     </Stack>
   );
 };

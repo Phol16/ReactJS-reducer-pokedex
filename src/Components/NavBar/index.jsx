@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function NavBar() {
   return (
     <Box width="90vw">
-      <AppBar position="static" sx={{ backgroundColor: 'gray', borderRadius: '5px' }}>
+      <AppBar position="static" sx={{ backgroundColor: '#1F487E', borderRadius: '5px' }}>
         <Toolbar>
           <Stack direction="row" justifyContent="space-between" alignItems="center" width="100%">
             <Stack direction="row">

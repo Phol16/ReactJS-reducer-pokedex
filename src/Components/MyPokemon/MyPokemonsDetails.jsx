@@ -67,9 +67,9 @@ export const MyPokemonDetails = ({ name }) => {
   };
 
   return (
-    <Stack alignItems="center" width="300px" sx={{ backgroundColor: 'gray', margin: '5px', borderRadius: '20px', padding: '20px' }}>
+    <Stack alignItems="center" width="300px" sx={{ backgroundColor: '#1F487E', margin: '5px', borderRadius: '20px', padding: '20px' }}>
       <img src={state.artwork} alt="artWork" width="250px" />
-      <IconButton onClick={handleOpen} size="medium" edge="start" aria-label="menu" sx={{ borderRadius: '5px', color: 'white', backgroundColor: 'darkgray' }}>
+      <IconButton onClick={handleOpen} size="medium" edge="start" aria-label="menu" sx={{ borderRadius: '5px', color: 'white', backgroundColor: '#1D3461' }}>
         <CatchingPokemonIcon fontSize="inherit" />
         <Typography sx={{ textShadow: '2px 2px 4px black' }}>Release</Typography>
       </IconButton>
